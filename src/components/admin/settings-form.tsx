@@ -12,7 +12,7 @@ const field = "h-12 w-full rounded-xl bg-panel-2 px-4 text-led ring-1 ring-white
 
 const FIELDS: { key: keyof SettingsInput; label: string; hint?: string; placeholder?: string; type?: string }[] = [
   { key: "store_name", label: "Nome da loja" },
-  { key: "tagline", label: "Frase do letreiro", placeholder: "Atacado e varejo & assistência técnica" },
+  { key: "tagline", label: "Frase do letreiro", placeholder: "Capinhas, acessórios & assistência técnica" },
   { key: "whatsapp", label: "WhatsApp", hint: "DDD + número", placeholder: "61 99312-5211", type: "tel" },
   { key: "instagram", label: "Instagram", hint: "sem o @", placeholder: "imperiodascapinhas25" },
   { key: "address", label: "Endereço da loja", placeholder: "Rua, número, bairro, cidade - DF" },

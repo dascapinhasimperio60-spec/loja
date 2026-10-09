@@ -81,54 +81,28 @@ export default async function HomePage() {
       </section>
 
       {/* ---------------------------------------------------------------- */}
-      {/* Wholesale + repair                                               */}
+      {/* Repair                                                           */}
       {/* ---------------------------------------------------------------- */}
-      <section id="atacado" className="mx-auto mt-28 max-w-[1400px] scroll-mt-24 px-4 sm:mt-40 sm:px-6 lg:px-10">
-        <div className="grid gap-3 lg:grid-cols-12 lg:gap-0 lg:overflow-hidden lg:rounded-[1.75rem] lg:ring-1 lg:ring-white/[0.06]">
-          <div className="relative min-w-0 rounded-[1.5rem] bg-sign p-8 text-on-sign sm:p-10 lg:col-span-7 lg:rounded-none lg:p-14">
-            {/* the acrylic plate is screwed to the wall */}
-            {["left-3 top-3", "right-3 top-3", "bottom-3 left-3", "bottom-3 right-3"].map((pos) => (
-              <span
-                key={pos}
-                aria-hidden
-                className={`absolute ${pos} size-3 rounded-full bg-[radial-gradient(circle_at_35%_35%,#f4f4f6,#8a8a90_60%,#4a4a50)] shadow-[inset_0_0_0_1px_rgba(0,0,0,0.35),0_1px_0_rgba(255,255,255,0.5)]`}
-              />
-            ))}
-            <h2 className="text-[clamp(2rem,4.6vw,3.9rem)] font-black uppercase leading-[0.9] tracking-[-0.03em] wdth-expanded">
-              Tem loja?
-              <br />
-              Compre no atacado.
-            </h2>
-            <p className="mt-5 max-w-[42ch] text-lg font-medium leading-relaxed text-black/75">
-              Capinhas, películas e acessórios em quantidade para revenda. Chama no WhatsApp e peça a lista de atacado.
-            </p>
-            <a
-              href={whatsappLink(settings.whatsapp, "Olá! Tenho loja e quero saber sobre compras no atacado.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-8 inline-flex max-w-full items-center gap-3 rounded-full bg-ink py-2 pl-5 pr-2 text-sm font-black uppercase text-led wdth-semi sm:text-base transition-transform active:scale-[0.98]"
-            >
-              <WhatsappLogo size={22} weight="fill" className="text-sign" aria-hidden />
-              <span className="min-w-0">Pedir lista de atacado</span>
-              <span className="flex size-10 items-center justify-center rounded-full bg-sign text-on-sign transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:translate-x-1">
-                <ArrowRight size={18} weight="bold" aria-hidden />
-              </span>
-            </a>
-          </div>
-          <div className="relative min-w-0 rounded-[1.5rem] bg-panel-2 p-8 ring-1 ring-white/[0.06] sm:p-10 lg:col-span-5 lg:rounded-none lg:p-14 lg:ring-0">
-            <h2 className="text-[clamp(1.8rem,3.4vw,2.9rem)] font-black uppercase leading-[0.92] tracking-[-0.025em] wdth-expanded">
-              Celular quebrou?
-            </h2>
-            <p className="mt-4 max-w-[36ch] text-lg leading-relaxed text-muted">
+      <section id="assistencia" className="mx-auto mt-28 max-w-[1400px] scroll-mt-24 px-4 sm:mt-40 sm:px-6 lg:px-10">
+        <div className="grid gap-6 rounded-[1.75rem] bg-panel-2 p-8 ring-1 ring-white/[0.06] sm:p-10 lg:grid-cols-12 lg:items-end lg:p-14">
+          <h2 className="text-[clamp(2rem,4.6vw,3.9rem)] font-black uppercase leading-[0.9] tracking-[-0.03em] wdth-expanded lg:col-span-7">
+            Celular quebrou?
+          </h2>
+          <div className="min-w-0 lg:col-span-5">
+            <p className="max-w-[40ch] text-lg leading-relaxed text-muted">
               A gente também faz assistência técnica. Mande o modelo e o problema que respondemos com o orçamento.
             </p>
             <a
               href={whatsappLink(settings.whatsapp, "Olá! Meu celular precisa de assistência técnica. Modelo: ")}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 text-base font-black uppercase text-sign underline decoration-sign/40 underline-offset-4 wdth-semi hover:decoration-sign"
+              className="group mt-8 inline-flex max-w-full items-center gap-3 rounded-full bg-sign py-2 pl-5 pr-2 text-sm font-black uppercase text-on-sign wdth-semi sm:text-base transition-transform active:scale-[0.98]"
             >
-              Pedir orçamento <ArrowRight size={18} weight="bold" aria-hidden />
+              <WhatsappLogo size={22} weight="fill" aria-hidden />
+              <span className="min-w-0">Pedir orçamento</span>
+              <span className="flex size-10 items-center justify-center rounded-full bg-ink text-sign transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:translate-x-1">
+                <ArrowRight size={18} weight="bold" aria-hidden />
+              </span>
             </a>
           </div>
         </div>

@@ -17,7 +17,7 @@ Next.js (App Router) + Tailwind + Motion, deployed on Vercel (Hobby/free). Supab
 
 ## Product Purpose
 
-An online showcase for Império das Capinhas, a phone-accessories store (atacado e varejo & assistência técnica). The site shows the store's own product photos, prices and descriptions; checkout happens on Mercado Livre. Success = visitors click "Comprar no Mercado Livre" (tracked per product) or ask on WhatsApp.
+An online showcase for Império das Capinhas, a phone-accessories store (capinhas, acessórios & assistência técnica). The site shows the store's own product photos, prices and descriptions; checkout happens on Mercado Livre. Success = visitors click "Comprar no Mercado Livre" (tracked per product) or ask on WhatsApp.
 
 ## Positioning
 
@@ -39,7 +39,7 @@ A real, physical store with walls full of cases ("referência em capas Apple"), 
 
 ## Brand Commitments
 
-- Name: **Império das Capinhas**. Tagline on signage: "Atacado e varejo & assistência técnica".
+- Name: **Império das Capinhas**. Tagline on signage: "Capinhas, acessórios & assistência técnica" (the store does not sell wholesale online).
 - Logo: black crown over a phone outline, on yellow; heavy black sans wordmark with white outline. Yellow + black is the recognizable identity (storefront sign, Instagram avatar).
 - Brands carried (from signage): Apple, Samsung, Motorola, Xiaomi, Realme, LG, Asus.
 - Voice from Instagram: direct, informal, Brazilian Portuguese ("Compre com a gente", "Enviamos para todo Brasil").

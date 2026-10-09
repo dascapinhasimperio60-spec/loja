@@ -16,7 +16,7 @@ export default async function StoreLayout({ children }: { children: React.ReactN
         Pular para o conteúdo
       </a>
       <LedTicker
-        items={[settings.announcement, "Compra segura pelo Mercado Livre", "Atacado e varejo", "Referência em capas Apple", "Assistência técnica"].filter(Boolean)}
+        items={[settings.announcement, "Compra segura pelo Mercado Livre", "Referência em capas Apple", "Assistência técnica"].filter(Boolean)}
       />
       {demo && (
         <p className="bg-panel-2 px-4 py-2 text-center text-xs font-semibold text-led/75">

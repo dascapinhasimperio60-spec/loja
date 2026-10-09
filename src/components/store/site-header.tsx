@@ -10,7 +10,7 @@ import { whatsappLink } from "@/lib/format";
 const NAV = [
   { href: "/produtos", label: "Vitrine" },
   { href: "/produtos#modelos", label: "Por modelo" },
-  { href: "/#atacado", label: "Atacado" },
+  { href: "/#assistencia", label: "Assistência" },
   { href: "/#loja", label: "A loja" },
 ];
 

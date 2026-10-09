@@ -9,7 +9,7 @@ export const CATALOG_TAG = "catalog";
 
 export const DEFAULT_SETTINGS: Settings = {
   store_name: "Império das Capinhas",
-  tagline: "Atacado e varejo & assistência técnica",
+  tagline: "Capinhas, acessórios & assistência técnica",
   whatsapp: "5561993125211",
   instagram: "imperiodascapinhas25",
   address: "",

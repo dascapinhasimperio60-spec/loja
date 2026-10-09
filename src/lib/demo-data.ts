@@ -540,7 +540,7 @@ export const demoCatalog: Catalog = {
   ],
   "settings": {
     "store_name": "Império das Capinhas",
-    "tagline": "Atacado e varejo & assistência técnica",
+    "tagline": "Capinhas, acessórios & assistência técnica",
     "whatsapp": "5561993125211",
     "instagram": "imperiodascapinhas25",
     "address": "",

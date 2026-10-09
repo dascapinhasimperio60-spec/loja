@@ -56,8 +56,7 @@ export function SiteFooter({ settings, categories }: { settings: Settings; categ
           <div className="md:col-span-4">
             <h2 className="text-sm font-black uppercase tracking-[0.06em] text-led wdth-semi">Como comprar</h2>
             <p className="mt-4 max-w-[40ch] text-muted">
-              Os pedidos são finalizados no Mercado Livre: pagamento, parcelamento e entrega ficam por lá. Dúvidas, atacado e assistência
-              técnica: fale com a gente no WhatsApp.
+              Os pedidos são finalizados no Mercado Livre: pagamento, parcelamento e entrega ficam por lá. Dúvidas e assistência técnica: fale com a gente no WhatsApp.
             </p>
             {settings.address && <p className="mt-4 text-muted">{settings.address}</p>}
             {settings.opening_hours && <p className="mt-1 text-muted">{settings.opening_hours}</p>}

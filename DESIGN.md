@@ -168,7 +168,7 @@ The system rejects the white marketplace grid with a banner carousel. Yellow is 
 A night palette: black and graphite steps, warm LED white for light, and a single sign yellow that carries every accent.
 
 ### Primary
-- **Sign Yellow** (sign): the storefront acrylic. Price plaques, selected tabs and model plaques, the primary pill action, the wholesale plate, the buy-path line, focus rings, text selection, icon tints on dark.
+- **Sign Yellow** (sign): the storefront acrylic. Price plaques, selected tabs and model plaques, the primary pill action, the buy-path line, focus rings, text selection, icon tints on dark.
 - **Deep Sign Amber** (sign-deep): the lower edge of the acrylic gradient on plaques and the lit sign; never used flat on its own.
 - **Unlit Sign** (sign-off): the dark acrylic visible behind the sign before it powers on.
 - **Plaque Black** (on-sign): text and inner ink on any yellow surface.
@@ -237,7 +237,7 @@ Depth is physical, not Material. Surfaces sit flat in tonal graphite steps; obje
 
 ## Shapes
 
-Three form families. Fixtures are softly rounded rectangles: cards 1.1rem, slatwall panels 1.5rem, the split wholesale block 1.75rem. Actions and tabs are full pills, usually with a round black arrow well on the right end. Signage objects are small acrylic forms: plaques at 0.55rem with a punched round hole at the left, and model tags cut to a price-tag silhouette (pointed left end, 0.5rem right corners) carrying the hole. Recurring real-world details: the blister hang-tab with its euro slot, screw heads in the corners of the yellow plate, the metal rail and SVG hook, the torn edge of the payment ticket. Small rotations (about -3 to 3 degrees) are applied to hung plaques and tickets so they read as hung by hand.
+Three form families. Fixtures are softly rounded rectangles: cards 1.1rem, slatwall panels 1.5rem, the repair panel 1.75rem. Actions and tabs are full pills, usually with a round black arrow well on the right end. Signage objects are small acrylic forms: plaques at 0.55rem with a punched round hole at the left, and model tags cut to a price-tag silhouette (pointed left end, 0.5rem right corners) carrying the hole. Recurring real-world details: the blister hang-tab with its euro slot, screw heads in the corners of the yellow plate, the metal rail and SVG hook, the torn edge of the payment ticket. Small rotations (about -3 to 3 degrees) are applied to hung plaques and tickets so they read as hung by hand.
 
 ## Components
 
