@@ -10,6 +10,7 @@ import { BuyActions } from "@/components/store/buy-actions";
 import { PricePlaque } from "@/components/store/price-plaque";
 import { HookRail } from "@/components/store/hook-rail";
 import { LedStrip } from "@/components/store/led-shelf";
+import { TrackVisit } from "@/components/store/track-visit";
 
 export const dynamicParams = true;
 
@@ -72,6 +73,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
   return (
     <div className="mx-auto max-w-[1400px] px-4 pt-6 sm:px-6 sm:pt-10 lg:px-10">
+      <TrackVisit page="produto" productId={product.id} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
 
       <nav aria-label="Caminho" className="mb-6 text-sm text-muted">

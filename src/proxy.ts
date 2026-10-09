@@ -4,7 +4,9 @@ import { createServerClient } from "@supabase/ssr";
 /**
  * Runs only for the admin panel (see matcher), never for store pages,
  * so public traffic does not spend function invocations.
- * Refreshes the Supabase session cookie and guards /admin.
+ * Refreshes the Supabase session cookie and guards /admin: only users listed
+ * in public.admins get past the login page. A signed-in account that is not
+ * an admin stays on the login page with an explanation (no redirect loop).
  */
 export async function proxy(request: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -28,19 +30,27 @@ export async function proxy(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
+  let isAdmin = false;
+  if (user) {
+    const { data } = await supabase.rpc("is_admin");
+    isAdmin = data === true;
+  }
+
+  // Redirects keep any refreshed session cookies.
+  const redirectTo = (pathname: string, search = "") => {
+    const target = request.nextUrl.clone();
+    target.pathname = pathname;
+    target.search = search;
+    const res = NextResponse.redirect(target);
+    response.cookies.getAll().forEach((c) => res.cookies.set(c));
+    res.headers.set("Cache-Control", "private, no-store");
+    return res;
+  };
+
   const isLogin = request.nextUrl.pathname.startsWith("/admin/login");
-  if (!user && !isLogin) {
-    const login = request.nextUrl.clone();
-    login.pathname = "/admin/login";
-    login.search = "";
-    return NextResponse.redirect(login);
-  }
-  if (user && isLogin) {
-    const home = request.nextUrl.clone();
-    home.pathname = "/admin";
-    home.search = "";
-    return NextResponse.redirect(home);
-  }
+
+  if (!isAdmin && !isLogin) return redirectTo("/admin/login", user ? "?erro=sem-permissao" : "");
+  if (isAdmin && isLogin) return redirectTo("/admin");
 
   return response;
 }

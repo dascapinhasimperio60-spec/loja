@@ -14,14 +14,29 @@ function refreshStore() {
   revalidateTag(CATALOG_TAG, { expire: 0 });
 }
 
+/** Friendly messages for expected failures; database internals never reach the browser. */
+class UserError extends Error {}
+
 function fail(error: unknown): { ok: false; error: string } {
   if (error instanceof z.ZodError) {
     return { ok: false, error: error.issues[0]?.message ?? "Dados inválidos." };
   }
-  if (error instanceof Error) return { ok: false, error: error.message };
-  if (error && typeof error === "object" && "message" in error) return { ok: false, error: String(error.message) };
+  if (error instanceof UserError || (error instanceof Error && error.name === "AuthError")) return { ok: false, error: error.message };
+  if (error && typeof error === "object" && "code" in error && (error as { code?: string }).code === "23505") {
+    return { ok: false, error: "Já existe um item com esse nome." };
+  }
+  console.error("[admin action]", error);
   return { ok: false, error: "Algo deu errado. Tente de novo." };
 }
+
+const IMAGEKIT_ENDPOINT = (process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT ?? "").replace(/\/$/, "");
+
+/** Only photos hosted on this store's ImageKit account can be attached to a product. */
+const imageKitUrl = z
+  .string()
+  .url()
+  .max(600)
+  .refine((v) => Boolean(IMAGEKIT_ENDPOINT) && v.startsWith(`${IMAGEKIT_ENDPOINT}/`), "Foto inválida: envie a imagem pelo painel.");
 
 // ---------------------------------------------------------------------------
 // Uploads (signed, straight from the browser to ImageKit)
@@ -36,7 +51,7 @@ export type UploadTicket = UploadAuth & { folder: string };
 export async function createUploadTickets(input: z.input<typeof uploadRequest>): Promise<Result<UploadTicket[]>> {
   try {
     await assertAdmin();
-    if (!hasImageKit) throw new Error("O ImageKit não está configurado (veja o README).");
+    if (!hasImageKit) throw new UserError("O ImageKit não está configurado (veja o README).");
     const { folder, count } = uploadRequest.parse(input);
     const tickets = Array.from({ length: count }, () => ({ ...createUploadAuth(), folder: `/imperio/produtos/${folder}` }));
     return { ok: true, data: tickets };
@@ -49,7 +64,8 @@ export async function createUploadTickets(input: z.input<typeof uploadRequest>):
 export async function discardUploads(fileIds: string[]): Promise<Result> {
   try {
     await assertAdmin();
-    if (hasImageKit) await deleteFiles(fileIds.filter(isFileId));
+    const ids = z.array(z.string()).max(50).parse(fileIds).filter(isFileId);
+    if (hasImageKit) await deleteFiles(ids);
     return { ok: true };
   } catch (error) {
     return fail(error);
@@ -61,11 +77,11 @@ export async function discardUploads(fileIds: string[]): Promise<Result> {
 // ---------------------------------------------------------------------------
 const imageSchema = z.object({
   id: z.string().uuid().optional(),
-  url: z.string().url(),
-  thumb_url: z.string().url(),
-  storage_key: z.string().min(1),
-  thumb_key: z.string().min(1),
-  width: z.number().int().nonnegative(),
+  url: imageKitUrl,
+  thumb_url: imageKitUrl,
+  storage_key: z.string().refine(isFileId, "Foto inválida."),
+  thumb_key: z.string().refine(isFileId, "Foto inválida."),
+  width: z.number().int().nonnegative().max(20000),
   height: z.number().int().nonnegative(),
 });
 
@@ -225,8 +241,8 @@ export async function setProductFlag(input: z.input<typeof flagSchema>): Promise
     const { id, field, value } = flagSchema.parse(input);
     if (field === "active" && value) {
       const { data } = await supabase.from("products").select("ml_url, product_images(id)").eq("id", id).single();
-      if (!data?.ml_url) throw new Error("Cole o link do Mercado Livre antes de publicar.");
-      if (!data.product_images?.length) throw new Error("Adicione uma foto antes de publicar.");
+      if (!data?.ml_url) throw new UserError("Cole o link do Mercado Livre antes de publicar.");
+      if (!data.product_images?.length) throw new UserError("Adicione uma foto antes de publicar.");
     }
     const { error } = await supabase.from("products").update({ [field]: value }).eq("id", id);
     if (error) throw error;

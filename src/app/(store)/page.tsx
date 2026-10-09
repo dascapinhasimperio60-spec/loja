@@ -9,6 +9,7 @@ import { LedStrip } from "@/components/store/led-shelf";
 import { WallShowcase } from "@/components/store/wall-showcase";
 import { BuyPath } from "@/components/store/buy-path";
 import { StoreVisit } from "@/components/store/store-visit";
+import { TrackVisit } from "@/components/store/track-visit";
 
 export default async function HomePage() {
   const { products, settings, demo } = await getCatalog();
@@ -22,6 +23,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <TrackVisit page="home" />
       {/* ---------------------------------------------------------------- */}
       {/* The sign + the rail: first viewport                              */}
       {/* ---------------------------------------------------------------- */}

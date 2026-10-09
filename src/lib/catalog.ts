@@ -19,7 +19,8 @@ export const DEFAULT_SETTINGS: Settings = {
 };
 
 const PRODUCT_COLUMNS =
-  "id, code, slug, title, description, price, compare_at_price, ml_url, category_id, models, material, includes, featured, active, sold_out, position, click_count, created_at, updated_at, images:product_images(id, url, thumb_url, storage_key, thumb_key, width, height, position)";
+  // Public columns only: click counts and storage keys stay private (see 0002 migration).
+  "id, code, slug, title, description, price, compare_at_price, ml_url, category_id, models, material, includes, featured, active, sold_out, position, created_at, updated_at, images:product_images(id, url, thumb_url, width, height, position)";
 
 async function fetchCatalog(): Promise<Catalog> {
   const supabase = getPublicSupabase();
@@ -40,7 +41,10 @@ async function fetchCatalog(): Promise<Catalog> {
     ...p,
     price: Number(p.price),
     compare_at_price: p.compare_at_price === null ? null : Number(p.compare_at_price),
-    images: [...(p.images ?? [])].sort((a, b) => a.position - b.position),
+    click_count: 0,
+    images: [...(p.images ?? [])]
+      .map((img) => ({ ...img, storage_key: "", thumb_key: "" }))
+      .sort((a, b) => a.position - b.position),
   })) as Product[];
 
   return {

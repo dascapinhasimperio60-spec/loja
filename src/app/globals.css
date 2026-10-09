@@ -280,3 +280,30 @@
 @media (prefers-reduced-motion: reduce) {
   .sign-power, .sign-power-glow, .sign-char { animation: none; }
 }
+
+/* --------------------------------------------------------------------------
+   Print (dashboard "Relatório em PDF"): flip the tokens to ink on paper.
+   -------------------------------------------------------------------------- */
+@media print {
+  :root {
+    color-scheme: light;
+    --color-ink: #ffffff;
+    --color-panel: #ffffff;
+    --color-panel-2: #f4f4f2;
+    --color-panel-3: #ebebe8;
+    --color-led: #111111;
+    --color-muted: #4a4a46;
+    --color-faint: #6b6b66;
+  }
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+  section {
+    box-shadow: none !important;
+    border: 1px solid #ddd;
+  }
+  @page {
+    margin: 12mm;
+  }
+}

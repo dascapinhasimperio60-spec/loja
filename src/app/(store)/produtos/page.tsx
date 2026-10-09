@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getCatalog } from "@/lib/catalog";
 import { CatalogBrowser } from "@/components/store/catalog-browser";
+import { TrackVisit } from "@/components/store/track-visit";
 
 export const metadata: Metadata = {
   title: "Vitrine",
@@ -14,6 +15,7 @@ export default async function ProductsPage() {
 
   return (
     <div className="mx-auto max-w-[1400px] px-4 pt-10 sm:px-6 sm:pt-14 lg:px-10">
+      <TrackVisit page="vitrine" />
       <header className="flex flex-col gap-4 border-b border-white/[0.06] pb-10 md:flex-row md:items-end md:justify-between">
         <h1 className="text-[clamp(3rem,9vw,7.5rem)] font-black uppercase leading-[0.84] tracking-[-0.035em] wdth-expanded">
           A vitrine

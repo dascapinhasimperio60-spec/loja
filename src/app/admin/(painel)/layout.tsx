@@ -15,10 +15,11 @@ export default async function PanelLayout({ children }: { children: React.ReactN
     );
   }
 
-  const { user } = await requireAdmin();
+  const { supabase, user } = await requireAdmin();
+  const { count } = await supabase.from("products").select("id", { count: "exact", head: true }).eq("active", true);
 
   return (
-    <AdminShell email={user.email ?? ""} storeUrl={env.siteUrl}>
+    <AdminShell email={user.email ?? ""} storeUrl={env.siteUrl} publishedCount={count ?? 0}>
       {children}
     </AdminShell>
   );
