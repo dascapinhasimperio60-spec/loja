@@ -1,0 +1,132 @@
+{
+  "title": "Escolha o mundo visual da loja",
+  "question": "A rodada sorteou \"Box 25, vitrine acesa\". Fique com ela, escolha a alternativa ou peça outra rodada.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Box 25, vitrine acesa",
+      "kicker": "O SORTEIO",
+      "lineage": "Boxes de feira e galerias de Brasília à noite: fita de LED, placa amarela, ganchos lotados",
+      "thesis": "A loja como um box aceso à noite: cada capinha pendurada sob a fita de LED, o preço numa plaquinha amarela.",
+      "palette": ["#0B0B0C", "#FFD60A", "#F4F4EE", "#26262A"],
+      "materials": ["fita de LED", "placa de acrílico amarela", "gancho de expositor", "fotos reais do estoque"],
+      "viewport": "O letreiro amarelo IMPÉRIO DAS CAPINHAS acende letra por letra; logo abaixo, um corredor escuro de ganchos onde as mais vendidas balançam, e no centro a pergunta 'Qual é o seu celular?' com os modelos como plaquinhas clicáveis.",
+      "risk": "Preto com um único acento forte é um visual comum de IA: só funciona com as fotos reais e as plaquinhas de preço bem desenhadas. A referência de feira não pode sugerir produto falsificado.",
+      "raised": [
+        { "from": "challenger-kraftwerk", "raise": "O amarelo carrega todo acento, sem segunda cor; os ganchos seguem uma grade modular rígida." },
+        { "from": "challenger-ekiben", "raise": "Cada produto traz uma plaquinha numerada (compatível com, material, o que vem); esgotado continua visível, como ausência honesta." },
+        { "from": "challenger-teletext", "raise": "Cada produto ganha um código curto (Cód. 302) para o cliente pedir pelo WhatsApp." },
+        { "from": "challenger-provenance", "raise": "Uma linha amarela contínua conduz o caminho da compra: vitrine, Mercado Livre, sua casa." }
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "A Parede",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "A parede de painel canaletado da própria loja, centenas de blisters pendurados em fileiras de cor",
+      "thesis": "O site é a parede da loja: cada produto é uma embalagem blister pendurada no gancho, e filtrar por modelo reorganiza a parede.",
+      "palette": ["#E9E9E4", "#FFD60A", "#111111", "#FFFFFF"],
+      "materials": ["painel canaletado cinza", "blister com cartela", "furo de gancho", "etiqueta de modelo"],
+      "viewport": "Painel canaletado claro ocupando a tela, capinhas penduradas em fileiras coloridas que entram balançando; à esquerda, o logo gigante e 'Qual é o seu celular?'.",
+      "risk": "É a leitura mais óbvia da loja e o caminho em que a maioria das execuções cai; se as cartelas forem tímidas, vira um e-commerce comum.",
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-teletext",
+      "label": "Teletexto",
+      "verdict": "declined",
+      "lineage": "Revistas de teletexto em grade 40x24",
+      "thesis": "O catálogo como páginas numeradas de três dígitos sobre preto.",
+      "palette": ["#000000", "#FFFF00", "#00FFFF", "#FFFFFF"],
+      "materials": ["mosaico de blocos", "fonte bitmap"],
+      "viewport": "Página 100 com as capinhas como linhas numeradas.",
+      "case": "O público brasileiro mal conheceu teletexto; perde em identificação e em clareza do produto.",
+      "risk": "Vira novidade retrô e esconde as fotos.",
+      "kept": "Endereço curto por produto: o código que o cliente cita no WhatsApp.",
+      "hero": "https://impeccable.style/worlds/cards/broadcast-programming-teletext-service-hero.webp"
+    },
+    {
+      "id": "challenger-kraftwerk",
+      "label": "Diagrama Man-Machine",
+      "verdict": "declined",
+      "lineage": "Identidade de banda em linhas neon sobre grade de trânsito",
+      "thesis": "Modelos e capinhas ligados por fios num diagrama orthogonal.",
+      "palette": ["#0A0A0A", "#E53A2F", "#F2B705", "#F4F1EA"],
+      "materials": ["linha neon", "esmalte liso"],
+      "viewport": "Grade com nós acendendo do modelo até a capa.",
+      "case": "Fria e abstrata para quem quer ver a capinha; perde nos dois eixos.",
+      "risk": "Diagrama no lugar da foto do produto.",
+      "kept": "Uma única cor de acento carrega tudo, sobre uma grade rígida.",
+      "hero": "https://impeccable.style/worlds/cards/kraftwerk-man-machine-hero.webp"
+    },
+    {
+      "id": "challenger-ekiben",
+      "label": "Quiosque de ekiben",
+      "verdict": "declined",
+      "lineage": "Marmitas de estação japonesas com mapa de conteúdo na tampa",
+      "thesis": "Cada produto como caixa com mapa numerado do que vem dentro.",
+      "palette": ["#C8A97A", "#F3EAD8", "#C0392B", "#2B2B2B"],
+      "materials": ["papel kraft", "selo vermelho"],
+      "viewport": "Prateleira de tampas ilustradas por região.",
+      "case": "Mundo distante do público e sem fotografia; perde nos dois eixos.",
+      "risk": "Ilustração no lugar das fotos reais.",
+      "kept": "Mapa numerado do produto e esgotado mostrado com honestidade.",
+      "hero": "https://impeccable.style/worlds/cards/vernacular-ephemera-ekiben-wrapper-kiosk-hero.webp"
+    },
+    {
+      "id": "challenger-provenance",
+      "label": "Fita de procedência",
+      "verdict": "declined",
+      "lineage": "Curadoria de museu: uma fita vermelha segue a vida do objeto",
+      "thesis": "Uma linha contínua conta a história de cada peça.",
+      "palette": ["#E8DCC4", "#B3261E", "#8A8A8A", "#1F1F1F"],
+      "materials": ["fita de seda", "carimbos"],
+      "viewport": "Coluna única guiada por uma fita.",
+      "case": "Tom de arquivo, lento para quem quer comprar; perde nos dois eixos.",
+      "risk": "Solene demais para loja de acessórios.",
+      "kept": "Uma linha contínua guiando o caminho da compra.",
+      "hero": "https://impeccable.style/worlds/cards/exhibition-museum-curation-provenance-ribbon-hero.webp"
+    },
+    {
+      "id": "challenger-film",
+      "label": "Filme 16mm revelado à mão",
+      "verdict": "declined",
+      "lineage": "Película com riscos e vazamentos de luz",
+      "thesis": "Produtos em quadros de filme com flare laranja no quadro ativo.",
+      "palette": ["#121212", "#9A9A94", "#FF7A1A", "#7A5C3A"],
+      "materials": ["grão", "perfuração"],
+      "viewport": "Tira de filme com o produto ativo iluminado.",
+      "case": "Degrada as fotos que precisam ser nítidas; perde nos dois eixos.",
+      "risk": "Efeito no lugar do produto.",
+      "kept": "Um único destaque por tela, reservado ao item ativo.",
+      "hero": "https://impeccable.style/worlds/cards/cinema-cinematography-editing-hand-processed-film-bloom-hero.webp"
+    },
+    {
+      "id": "challenger-ascii",
+      "label": "Cena em ASCII",
+      "verdict": "declined",
+      "lineage": "Cenas renderizadas com caracteres de máquina de escrever",
+      "thesis": "Produtos desenhados em densidade de caracteres.",
+      "palette": ["#000000", "#FFB000"],
+      "materials": ["fósforo âmbar", "grade monoespaçada"],
+      "viewport": "Capinha girando feita de caracteres.",
+      "case": "Esconde cor e textura, que é o que vende capinha; perde nos dois eixos.",
+      "risk": "Ilegível como vitrine.",
+      "kept": "Paleta curta e disciplinada.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-ascii-live-scene-render-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code" },
+  "canon": true,
+  "canonCard": {
+    "label": "O padrão de e-commerce",
+    "thesis": "Loja virtual clássica: fundo branco, banner carrossel, grade de produtos com acento amarelo.",
+    "palette": ["#FFFFFF", "#111111", "#FFD60A"],
+    "materials": ["grade limpa", "fotos de produto", "carrossel"],
+    "viewport": "Banner rotativo no topo, categorias em ícones, grade de 4 colunas de produtos.",
+    "risk": "Igual a qualquer loja do Mercado Livre ou Shopee, por definição."
+  },
+  "steer": true
+}

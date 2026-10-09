@@ -1,0 +1,282 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Box 25: a phone-accessories box lit at night.
+   Black display panel, graphite slatwall, LED strip light, yellow acrylic
+   plaques. The sign yellow carries every accent; there is no second color.
+   ========================================================================== */
+
+@theme {
+  --color-ink: #0b0b0c;
+  --color-panel: #131315;
+  --color-panel-2: #1b1b1e;
+  --color-panel-3: #252529;
+  --color-groove: #060607;
+  --color-led: #f6f4ec;
+  --color-muted: #a3a29b;
+  --color-faint: #6f6e69;
+  --color-sign: #ffcc29;
+  --color-sign-deep: #e6b012;
+  --color-sign-off: #2e2810;
+  --color-on-sign: #0b0b0c;
+  --color-danger: #ff6b5e;
+  --color-ok: #7fdc9a;
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-led: var(--font-doto), ui-monospace, monospace;
+
+  --radius-plaque: 0.55rem;
+  --radius-card: 1.1rem;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+
+  --animate-marquee: marquee var(--marquee-duration, 38s) linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+/* --------------------------------------------------------------------------
+   Base + browser surfaces
+   -------------------------------------------------------------------------- */
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scrollbar-color: var(--color-panel-3) var(--color-ink);
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background: var(--color-ink);
+    color: var(--color-led);
+    font-family: var(--font-sans);
+    font-variation-settings: "wdth" 100;
+    caret-color: var(--color-sign);
+    min-height: 100dvh;
+  }
+
+  ::selection {
+    background: var(--color-sign);
+    color: var(--color-on-sign);
+  }
+
+  ::-webkit-scrollbar { width: 12px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--color-ink); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-panel-3);
+    border: 3px solid var(--color-ink);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #3a3a40; }
+
+  :focus-visible {
+    outline: 2px solid var(--color-sign);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  a { text-underline-offset: 0.22em; text-decoration-thickness: 1px; }
+
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  input, textarea, select, button { font: inherit; }
+
+  img { -webkit-user-drag: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Materials
+   -------------------------------------------------------------------------- */
+@layer components {
+  /* Graphite slatwall: horizontal grooves like the store's panel. */
+  .slatwall {
+    background-color: var(--color-panel);
+    background-image:
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 0, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, transparent 0, transparent calc(100% - 7px), var(--color-groove) calc(100% - 7px), var(--color-groove) calc(100% - 2px), rgba(255, 255, 255, 0.05) calc(100% - 2px));
+    background-size: 100% 64px;
+  }
+
+  /* LED strip: the light source over every shelf. */
+  .led-strip {
+    position: relative;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(246, 244, 236, 0.2), var(--color-led) 12%, var(--color-led) 88%, rgba(246, 244, 236, 0.2));
+    box-shadow:
+      0 0 6px rgba(255, 250, 235, 0.9),
+      0 0 22px rgba(255, 246, 220, 0.45),
+      0 10px 48px rgba(255, 240, 200, 0.18);
+    transform-origin: left center;
+  }
+  .led-strip::after {
+    /* light cone falling onto the products */
+    content: "";
+    position: absolute;
+    inset: 3px -2% auto;
+    height: 260px;
+    background: radial-gradient(ellipse 60% 100% at 50% 0, rgba(255, 248, 226, 0.11), transparent 70%);
+    pointer-events: none;
+  }
+
+  /* One LED segment per shelf cell; adjacent cells join into one strip per row. */
+  .led-strip.led-seg {
+    border-radius: 0;
+    background: var(--color-led);
+  }
+
+  /* Graphite model tag with a punched hole (unselected plaque). */
+  .tag {
+    background: linear-gradient(180deg, #34343a 0%, #2a2a2f 55%, #232327 100%);
+    color: var(--color-led);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.4),
+      0 6px 12px -6px rgba(0, 0, 0, 0.8);
+  }
+  .tag-hole::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    flex: none;
+    border-radius: 999px;
+    background: var(--color-ink);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 1), 0 0 0 1px rgba(255, 255, 255, 0.14);
+  }
+
+  /* Price-tag silhouette: pointed end carrying the punched hole. */
+  .tag-shape {
+    clip-path: polygon(0.8rem 0, 100% 0, 100% 100%, 0.8rem 100%, 0 50%);
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding-left: 0.95rem;
+  }
+
+  /* Yellow acrylic plaque with a punched hole. */
+  .plaque {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(180deg, #ffd74d 0%, var(--color-sign) 45%, var(--color-sign-deep) 100%);
+    color: var(--color-on-sign);
+    border-radius: var(--radius-plaque);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.65),
+      inset 0 -2px 0 rgba(120, 80, 0, 0.25),
+      0 6px 14px -4px rgba(0, 0, 0, 0.6),
+      0 18px 30px -12px rgba(0, 0, 0, 0.5);
+  }
+  .plaque-hole::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    flex: none;
+    border-radius: 999px;
+    background: var(--color-ink);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.9), 0 1px 0 rgba(255, 255, 255, 0.55);
+  }
+
+  /* Metal rail the hooks hang from. */
+  .rail {
+    height: 12px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #8d8d93 0%, #f1f1f4 28%, #a9a9b0 52%, #4c4c52 80%, #2a2a2e 100%);
+    box-shadow: 0 8px 18px -6px rgba(0, 0, 0, 0.85);
+  }
+
+  /* Blister header card with the euro slot the hook passes through. */
+  .hang-tab {
+    position: relative;
+    height: 2.1rem;
+    background: linear-gradient(180deg, var(--color-panel-3), var(--color-panel-2));
+    border-radius: var(--radius-card) var(--radius-card) 0 0;
+  }
+  .hang-tab::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0.62rem;
+    width: 2.6rem;
+    height: 0.72rem;
+    translate: -50% 0;
+    border-radius: 999px;
+    background: var(--color-ink);
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.95), 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  /* Sign lettering: black with the white outline of the storefront logo. */
+  .sign-letter {
+    color: var(--color-on-sign);
+    -webkit-text-stroke: 0.06em #fff;
+    paint-order: stroke fill;
+    text-shadow: 0 0.04em 0 rgba(0, 0, 0, 0.18);
+  }
+
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  .wdth-expanded { font-variation-settings: "wdth" 125; }
+  .wdth-semi { font-variation-settings: "wdth" 112; }
+  .wdth-condensed { font-variation-settings: "wdth" 75; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   The sign powering on: fluorescent tubes stutter, then hold.
+   Pure CSS so it runs before hydration; visible end state is the default
+   under reduced motion.
+   -------------------------------------------------------------------------- */
+@keyframes sign-power {
+  0% { opacity: 0; }
+  8% { opacity: 0.85; }
+  11% { opacity: 0.1; }
+  22% { opacity: 0.1; }
+  26% { opacity: 1; }
+  30% { opacity: 0.35; }
+  36% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@keyframes sign-char {
+  from { transform: translate3d(0, 0.35em, 0); filter: blur(6px); opacity: 0; }
+  to { transform: translate3d(0, 0, 0); filter: blur(0); opacity: 1; }
+}
+
+@keyframes led-on {
+  0% { transform: scaleX(0); opacity: 0.4; }
+  70% { opacity: 0.6; }
+  78% { opacity: 1; }
+  84% { opacity: 0.5; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+
+.sign-power {
+  animation: sign-power 1.5s steps(1, end) 0.15s both;
+}
+.sign-power-glow {
+  animation: sign-power 1.5s steps(1, end) 0.15s both;
+}
+.sign-char {
+  display: inline-block;
+  animation: sign-char 0.9s var(--ease-out-expo) both;
+  animation-delay: calc(0.55s + var(--i, 0) * 45ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sign-power, .sign-power-glow, .sign-char { animation: none; }
+}

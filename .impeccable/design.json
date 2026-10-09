@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T00:00:00Z",
+  "title": "Design System: Império das Capinhas",
+  "extensions": {
+    "colorMeta": {
+      "sign": { "role": "primary", "displayName": "Sign Yellow", "canonical": "#ffcc29", "tonalRamp": ["#2e2810", "#5a4708", "#8a6c06", "#b88f08", "#e6b012", "#ffcc29", "#ffe07a", "#fff3c9"] },
+      "sign-deep": { "role": "primary", "displayName": "Deep Sign Amber", "canonical": "#e6b012", "tonalRamp": ["#2a2006", "#523f08", "#7d600a", "#a8800c", "#e6b012", "#f0c447", "#f7da85", "#fcefc4"] },
+      "sign-off": { "role": "primary", "displayName": "Unlit Sign", "canonical": "#2e2810", "tonalRamp": ["#14110a", "#2e2810", "#4a4120", "#675b33", "#857749", "#a49562", "#c4b680", "#e3d9b0"] },
+      "on-sign": { "role": "primary", "displayName": "Plaque Black", "canonical": "#0b0b0c", "tonalRamp": ["#0b0b0c", "#1b1b1e", "#2c2c31", "#45454b", "#64646a", "#8a8a90", "#b8b8bc", "#e6e6e8"] },
+      "ink": { "role": "neutral", "displayName": "Display Black", "canonical": "#0b0b0c", "tonalRamp": ["#060607", "#0b0b0c", "#131315", "#1b1b1e", "#252529", "#34343a", "#4c4c52", "#6f6e69"] },
+      "panel": { "role": "neutral", "displayName": "Graphite Panel", "canonical": "#131315", "tonalRamp": ["#060607", "#0b0b0c", "#131315", "#1b1b1e", "#252529", "#34343a", "#4c4c52", "#6f6e69"] },
+      "panel-2": { "role": "neutral", "displayName": "Graphite Raised", "canonical": "#1b1b1e", "tonalRamp": ["#060607", "#0b0b0c", "#131315", "#1b1b1e", "#252529", "#34343a", "#4c4c52", "#6f6e69"] },
+      "panel-3": { "role": "neutral", "displayName": "Graphite High", "canonical": "#252529", "tonalRamp": ["#060607", "#0b0b0c", "#131315", "#1b1b1e", "#252529", "#34343a", "#4c4c52", "#6f6e69"] },
+      "groove": { "role": "neutral", "displayName": "Groove", "canonical": "#060607", "tonalRamp": ["#060607", "#0b0b0c", "#131315", "#1b1b1e", "#252529", "#34343a", "#4c4c52", "#6f6e69"] },
+      "led": { "role": "neutral", "displayName": "LED White", "canonical": "#f6f4ec", "tonalRamp": ["#26251f", "#4a4840", "#6f6e69", "#a3a29b", "#c8c6be", "#e0ded6", "#f6f4ec", "#fffdf6"] },
+      "muted": { "role": "neutral", "displayName": "Warm Muted", "canonical": "#a3a29b", "tonalRamp": ["#26251f", "#4a4840", "#6f6e69", "#a3a29b", "#c8c6be", "#e0ded6", "#f6f4ec", "#fffdf6"] },
+      "faint": { "role": "neutral", "displayName": "Faint", "canonical": "#6f6e69", "tonalRamp": ["#26251f", "#4a4840", "#6f6e69", "#a3a29b", "#c8c6be", "#e0ded6", "#f6f4ec", "#fffdf6"] },
+      "danger": { "role": "status", "displayName": "Signal Red (admin)", "canonical": "#ff6b5e", "tonalRamp": ["#3a0f0b", "#6b1d16", "#a12c21", "#d8402f", "#ff6b5e", "#ff9389", "#ffbab3", "#ffe1dd"] },
+      "ok": { "role": "status", "displayName": "Signal Green (admin)", "canonical": "#7fdc9a", "tonalRamp": ["#0f2a17", "#1d4d2b", "#2d7542", "#46a05f", "#7fdc9a", "#a1e6b4", "#c3f0cf", "#e4f9ea"] }
+    },
+    "typographyMeta": {
+      "sign": { "displayName": "Sign", "purpose": "Storefront lettering only; black with white outline on yellow, assembled letter by letter." },
+      "display": { "displayName": "Display", "purpose": "Section headlines, uppercase, stacked with explicit breaks." },
+      "headline": { "displayName": "Headline", "purpose": "Module titles such as the model picker question." },
+      "title": { "displayName": "Title", "purpose": "Product name on the product page, sentence case." },
+      "body": { "displayName": "Body", "purpose": "Muted section paragraphs, 34-44ch; descriptions at 65ch." },
+      "card-title": { "displayName": "Card Title", "purpose": "Product names inside hangs." },
+      "label": { "displayName": "Label", "purpose": "Headings of real groups (footer columns, filter groups); never above a headline." },
+      "action": { "displayName": "Action", "purpose": "Uppercase text in pill actions." },
+      "led": { "displayName": "LED", "purpose": "Dot-matrix marquee ticker and the 404 only." }
+    },
+    "shadows": [
+      { "name": "led-glow", "value": "0 0 6px rgba(255,250,235,0.9), 0 0 22px rgba(255,246,220,0.45), 0 10px 48px rgba(255,240,200,0.18)", "purpose": "The LED strip over every shelf." },
+      { "name": "acrylic-plaque", "value": "inset 0 1px 0 rgba(255,255,255,0.65), inset 0 -2px 0 rgba(120,80,0,0.25), 0 6px 14px -4px rgba(0,0,0,0.6), 0 18px 30px -12px rgba(0,0,0,0.5)", "purpose": "Yellow acrylic plaques." },
+      { "name": "graphite-tag", "value": "inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(0,0,0,0.4), 0 6px 12px -6px rgba(0,0,0,0.8)", "purpose": "Unselected model tags." },
+      { "name": "hanging-card", "value": "0 24px 40px -24px rgba(0,0,0,0.95)", "purpose": "Product hangs at rest." },
+      { "name": "hanging-card-hover", "value": "0 34px 60px -26px rgba(0,0,0,1)", "purpose": "Product hangs on hover." },
+      { "name": "sign-glow", "value": "0 14px 34px -12px rgba(255,204,41,0.55)", "purpose": "Primary yellow pill action." },
+      { "name": "rail", "value": "0 8px 18px -6px rgba(0,0,0,0.85)", "purpose": "Metal rail the hooks hang from." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing for reveals, arrow nudges, LED scale-on." },
+      { "name": "ease-out-quart", "value": "cubic-bezier(0.25, 1, 0.5, 1)", "purpose": "Secondary deceleration." },
+      { "name": "sign-power", "value": "1.5s steps(1, end) 0.15s", "purpose": "Fluorescent stutter as the sign powers on." },
+      { "name": "sign-char", "value": "0.9s ease-out-expo, 45ms stagger from 0.55s", "purpose": "Sign letters rising out of blur." },
+      { "name": "led-on", "value": "scaleX 0.9s ease-out-expo + opacity flicker 0.8s", "purpose": "Shelf LED segments switching on in view." },
+      { "name": "hang-swing", "value": "spring stiffness 150, damping 5.5, mass 0.9", "purpose": "Products swinging to rest on the hook." },
+      { "name": "pill-slide", "value": "spring stiffness 420, damping 34", "purpose": "Selected tab layer sliding between tabs." },
+      { "name": "marquee", "value": "38s linear infinite", "purpose": "LED ticker scroll; pauses on hover." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Pill Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Sign-yellow pill with a round black arrow well; the main action on every store surface.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Ver a vitrine<span class=\"ds-btn-well\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M224.49 136.49l-72 72a12 12 0 0 1-17-17L187 140H40a12 12 0 0 1 0-24h147l-51.49-51.51a12 12 0 0 1 17-17l72 72a12 12 0 0 1-.02 17z\"/></svg></span></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 12px; padding: 8px 8px 8px 24px; border-radius: 999px; background: var(--color-sign, #ffcc29); color: var(--color-on-sign, #0b0b0c); font-family: var(--font-sans, Archivo, sans-serif); font-weight: 900; font-variation-settings: 'wdth' 112; text-transform: uppercase; font-size: 1rem; text-decoration: none; box-shadow: 0 14px 34px -12px rgba(255,204,41,0.55); transition: transform 300ms; } .ds-btn-well { display: flex; width: 40px; height: 40px; align-items: center; justify-content: center; border-radius: 999px; background: var(--color-ink, #0b0b0c); color: var(--color-sign, #ffcc29); transition: transform 500ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover .ds-btn-well { transform: translateX(4px); } .ds-btn-primary:active { transform: scale(0.98); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-sign, #ffcc29); outline-offset: 3px; }"
+    },
+    {
+      "name": "Light Pill Action",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "LED-white pill with ink text; secondary wall action and the unavailable-to-buy fallback.",
+      "html": "<a class=\"ds-btn-light\" href=\"#\">Ver a vitrine completa<span class=\"ds-btn-light-well\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M224.49 136.49l-72 72a12 12 0 0 1-17-17L187 140H40a12 12 0 0 1 0-24h147l-51.49-51.51a12 12 0 0 1 17-17l72 72a12 12 0 0 1-.02 17z\"/></svg></span></a>",
+      "css": ".ds-btn-light { display: inline-flex; align-items: center; gap: 12px; padding: 8px 8px 8px 24px; border-radius: 999px; background: var(--color-led, #f6f4ec); color: var(--color-ink, #0b0b0c); font-family: var(--font-sans, Archivo, sans-serif); font-weight: 900; font-variation-settings: 'wdth' 112; text-transform: uppercase; font-size: 1rem; text-decoration: none; transition: transform 300ms; } .ds-btn-light-well { display: flex; width: 40px; height: 40px; align-items: center; justify-content: center; border-radius: 999px; background: var(--color-ink, #0b0b0c); color: var(--color-sign, #ffcc29); transition: transform 500ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-light:hover .ds-btn-light-well { transform: translateX(4px); } .ds-btn-light:active { transform: scale(0.98); } .ds-btn-light:focus-visible { outline: 2px solid var(--color-sign, #ffcc29); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Pill",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Hairline-ringed pill for the WhatsApp question action.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Tirar dúvida no WhatsApp</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 999px; color: var(--color-led, #f6f4ec); font-family: var(--font-sans, Archivo, sans-serif); font-weight: 700; text-decoration: none; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12); transition: background-color 200ms, box-shadow 200ms; } .ds-btn-ghost:hover { background: rgba(255,255,255,0.05); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--color-sign, #ffcc29); outline-offset: 3px; }"
+    },
+    {
+      "name": "Brand Tabs",
+      "kind": "chip",
+      "refersTo": "tab-pill-selected",
+      "description": "Brand filter tabs; the selected tab is a yellow pill layer.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\"><button class=\"ds-tab is-on\" role=\"tab\" aria-selected=\"true\">Apple</button><button class=\"ds-tab\" role=\"tab\">Samsung</button><button class=\"ds-tab\" role=\"tab\">Motorola</button></div>",
+      "css": ".ds-tabs { display: flex; gap: 6px; flex-wrap: wrap; } .ds-tab { padding: 8px 16px; border: 0; border-radius: 999px; background: transparent; color: rgba(246,244,236,0.75); font-family: var(--font-sans, Archivo, sans-serif); font-size: 0.875rem; font-weight: 700; cursor: pointer; transition: color 300ms, background-color 300ms; } .ds-tab:hover { color: var(--color-led, #f6f4ec); } .ds-tab.is-on { background: var(--color-sign, #ffcc29); color: var(--color-on-sign, #0b0b0c); } .ds-tab:focus-visible { outline: 2px solid var(--color-sign, #ffcc29); outline-offset: 3px; }"
+    },
+    {
+      "name": "Price Plaque",
+      "kind": "custom",
+      "refersTo": "price-plaque",
+      "description": "Yellow acrylic price tag with punched hole, tabular price, struck previous price and ink discount block.",
+      "html": "<span class=\"ds-plaque\"><span class=\"ds-plaque-hole\"></span><span class=\"ds-plaque-price\"><span class=\"ds-plaque-was\">R$ 89,90</span><span class=\"ds-plaque-now\"><span class=\"ds-cur\">R$</span><span class=\"ds-int\">59</span><span class=\"ds-cents\">,90</span></span></span><span class=\"ds-off\">-33%</span></span>",
+      "css": ".ds-plaque { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; rotate: -2deg; border-radius: 0.55rem; background: linear-gradient(180deg, #ffd74d 0%, #ffcc29 45%, #e6b012 100%); color: #0b0b0c; font-family: var(--font-sans, Archivo, sans-serif); font-variant-numeric: tabular-nums; box-shadow: inset 0 1px 0 rgba(255,255,255,0.65), inset 0 -2px 0 rgba(120,80,0,0.25), 0 6px 14px -4px rgba(0,0,0,0.6), 0 18px 30px -12px rgba(0,0,0,0.5); } .ds-plaque-hole { width: 8px; height: 8px; flex: none; border-radius: 999px; background: #0b0b0c; box-shadow: inset 0 1px 2px rgba(0,0,0,0.9), 0 1px 0 rgba(255,255,255,0.55); } .ds-plaque-price { display: flex; flex-direction: column; line-height: 1; } .ds-plaque-was { font-size: 0.75rem; font-weight: 600; color: rgba(0,0,0,0.6); text-decoration: line-through; margin-bottom: 2px; } .ds-plaque-now { display: flex; align-items: flex-start; font-weight: 900; font-variation-settings: 'wdth' 112; } .ds-cur { font-size: 0.75rem; font-weight: 700; margin: 0.3em 2px 0 0; } .ds-int { font-size: 1.875rem; letter-spacing: -0.03em; } .ds-cents { font-size: 0.875rem; font-weight: 800; margin-top: 0.18em; } .ds-off { align-self: stretch; display: flex; align-items: center; padding: 0 8px; border-radius: 0.35rem; background: #0b0b0c; color: #ffcc29; font-weight: 900; font-size: 0.875rem; }"
+    },
+    {
+      "name": "Model Tag",
+      "kind": "chip",
+      "refersTo": "model-tag",
+      "description": "Graphite price-tag silhouette with punched hole per phone model; active becomes a yellow plaque.",
+      "html": "<div class=\"ds-tags\"><a class=\"ds-tag\" href=\"#\">iPhone 16 Pro Max</a><a class=\"ds-tag is-on\" href=\"#\">iPhone 15</a></div>",
+      "css": ".ds-tags { display: flex; flex-wrap: wrap; gap: 8px; } .ds-tag { display: flex; align-items: center; gap: 8px; padding: 8px 14px 8px 15px; clip-path: polygon(0.8rem 0, 100% 0, 100% 100%, 0.8rem 100%, 0 50%); border-radius: 0 0.5rem 0.5rem 0; background: linear-gradient(180deg, #34343a 0%, #2a2a2f 55%, #232327 100%); color: #f6f4ec; font-family: var(--font-sans, Archivo, sans-serif); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: transform 300ms cubic-bezier(0.16,1,0.3,1), color 300ms; } .ds-tag::before { content: ''; width: 8px; height: 8px; flex: none; border-radius: 999px; background: #0b0b0c; box-shadow: inset 0 1px 2px #000, 0 0 0 1px rgba(255,255,255,0.14); } .ds-tag:hover { transform: translateY(-2px); color: #ffcc29; } .ds-tag.is-on { background: linear-gradient(180deg, #ffd74d 0%, #ffcc29 45%, #e6b012 100%); color: #0b0b0c; font-weight: 700; } .ds-tag:focus-visible { outline: 2px solid #ffcc29; outline-offset: 3px; }"
+    },
+    {
+      "name": "Product Hang",
+      "kind": "card",
+      "refersTo": "product-hang",
+      "description": "Product card hanging on a metal hook from a blister hang-tab, under its LED segment.",
+      "html": "<div class=\"ds-cell\"><span class=\"ds-led\"></span><article class=\"ds-hang\"><svg class=\"ds-hook\" viewBox=\"0 0 28 44\" width=\"28\" height=\"44\" aria-hidden=\"true\"><defs><linearGradient id=\"dsm\" x1=\"0\" x2=\"1\"><stop offset=\"0\" stop-color=\"#5d5d63\"/><stop offset=\"0.45\" stop-color=\"#f2f2f5\"/><stop offset=\"1\" stop-color=\"#6c6c72\"/></linearGradient></defs><ellipse cx=\"14\" cy=\"5\" rx=\"9\" ry=\"4\" fill=\"#0a0a0b\"/><ellipse cx=\"14\" cy=\"4.4\" rx=\"6.5\" ry=\"2.6\" fill=\"url(#dsm)\"/><path d=\"M14 5 V30 q0 7 6 7\" fill=\"none\" stroke=\"url(#dsm)\" stroke-width=\"3.4\" stroke-linecap=\"round\"/></svg><a class=\"ds-hang-card\" href=\"#\"><div class=\"ds-hang-tab\"></div><div class=\"ds-hang-photo\"></div><div class=\"ds-hang-body\"><span class=\"ds-code\">Cód. 101</span><h3>Capinha Silicone Aveludada MagSafe Lavanda</h3><p>iPhone 16 Pro Max +3</p></div></a></article></div>",
+      "css": ".ds-cell { position: relative; padding-top: 20px; width: 220px; } .ds-led { position: absolute; left: -8px; right: -8px; top: 0; height: 3px; background: #f6f4ec; box-shadow: 0 0 6px rgba(255,250,235,0.9), 0 0 22px rgba(255,246,220,0.45), 0 10px 48px rgba(255,240,200,0.18); } .ds-hang { position: relative; padding-top: 24px; } .ds-hook { position: absolute; left: 50%; top: 0; transform: translateX(-50%); z-index: 1; } .ds-hang-card { display: block; overflow: hidden; border-radius: 1.1rem; background: #1b1b1e; color: #f6f4ec; text-decoration: none; box-shadow: 0 24px 40px -24px rgba(0,0,0,0.95), inset 0 0 0 1px rgba(255,255,255,0.06); transition: box-shadow 500ms; } .ds-hang-card:hover { box-shadow: 0 34px 60px -26px rgba(0,0,0,1), inset 0 0 0 1px rgba(255,255,255,0.12); } .ds-hang-card:focus-visible { outline: 2px solid #ffcc29; outline-offset: 4px; } .ds-hang-tab { position: relative; height: 2.1rem; background: linear-gradient(180deg, #252529, #1b1b1e); } .ds-hang-tab::before { content: ''; position: absolute; left: 50%; top: 0.62rem; width: 2.6rem; height: 0.72rem; translate: -50% 0; border-radius: 999px; background: #0b0b0c; box-shadow: inset 0 2px 3px rgba(0,0,0,0.95); } .ds-hang-photo { aspect-ratio: 4 / 5; background: #252529; } .ds-hang-body { padding: 12px 14px 16px; font-family: var(--font-sans, Archivo, sans-serif); } .ds-code { display: inline-block; padding: 2px 6px; border-radius: 4px; background: rgba(255,255,255,0.06); font-size: 0.75rem; font-weight: 700; font-variant-numeric: tabular-nums; } .ds-hang-body h3 { margin: 6px 0 0; font-size: 1rem; font-weight: 700; line-height: 1.25; } .ds-hang-body p { margin: 6px 0 0; font-size: 0.8rem; font-weight: 600; color: rgba(255,204,41,0.9); }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "Graphite pill search with leading icon; focus ring turns sign yellow.",
+      "html": "<label class=\"ds-search\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M229.66 218.34l-50.07-50.06a88.11 88.11 0 1 0-11.31 11.31l50.06 50.07a8 8 0 0 0 11.32-11.32zM40 112a72 72 0 1 1 72 72 72.08 72.08 0 0 1-72-72z\"/></svg><input type=\"search\" placeholder=\"Buscar produto, modelo ou código\"></label>",
+      "css": ".ds-search { position: relative; display: block; width: 320px; } .ds-search svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #a3a29b; pointer-events: none; } .ds-search input { width: 100%; height: 52px; padding: 0 16px 0 48px; border: 0; border-radius: 999px; background: #1b1b1e; color: #f6f4ec; font: inherit; font-size: 1rem; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); transition: box-shadow 200ms; } .ds-search input::placeholder { color: #6f6e69; } .ds-search input:focus { outline: none; box-shadow: inset 0 0 0 2px #ffcc29; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "tab-pill",
+      "description": "Sticky ink header: wordmark, pill links, yellow-outlined WhatsApp pill.",
+      "html": "<header class=\"ds-nav\"><strong class=\"ds-nav-mark\">IMPÉRIO</strong><nav><a href=\"#\">Vitrine</a><a href=\"#\">Por modelo</a><a href=\"#\">Atacado</a><a href=\"#\">A loja</a></nav><a class=\"ds-nav-wa\" href=\"#\">WhatsApp</a></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 68px; padding: 0 24px; background: #0b0b0c; font-family: var(--font-sans, Archivo, sans-serif); } .ds-nav-mark { color: #f6f4ec; font-weight: 900; font-variation-settings: 'wdth' 125; } .ds-nav nav { display: flex; gap: 4px; } .ds-nav nav a { padding: 8px 16px; border-radius: 999px; color: rgba(246,244,236,0.8); font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: background-color 300ms, color 300ms; } .ds-nav nav a:hover { background: rgba(255,255,255,0.06); color: #f6f4ec; } .ds-nav nav a:focus-visible, .ds-nav-wa:focus-visible { outline: 2px solid #ffcc29; outline-offset: 3px; } .ds-nav-wa { padding: 6px 14px; border: 1px solid rgba(255,204,41,0.4); border-radius: 999px; color: #ffcc29; font-size: 0.875rem; font-weight: 700; text-decoration: none; transition: background-color 300ms, color 300ms, border-color 300ms; } .ds-nav-wa:hover { background: #ffcc29; border-color: #ffcc29; color: #0b0b0c; }"
+    },
+    {
+      "name": "LED Ticker",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Dot-matrix yellow marquee on a black dot grid; pauses on hover.",
+      "html": "<div class=\"ds-ticker\"><div class=\"ds-ticker-row\"><span>COMPRA SEGURA PELO MERCADO LIVRE</span><i></i><span>ATACADO E VAREJO</span><i></i><span>ENVIAMOS PARA TODO O BRASIL</span><i></i></div></div>",
+      "css": ".ds-ticker { overflow: hidden; padding: 6px 0; background: #060606; background-image: radial-gradient(rgba(255,204,41,0.07) 1px, transparent 1.2px); background-size: 4px 4px; border-bottom: 1px solid rgba(255,255,255,0.05); color: #ffcc29; font-family: var(--font-led, Doto, monospace); font-size: 0.95rem; font-weight: 900; letter-spacing: 0.12em; text-shadow: 0 0 8px rgba(255,204,41,0.55); } .ds-ticker-row { display: flex; align-items: center; gap: 40px; width: max-content; white-space: nowrap; animation: ds-marquee 38s linear infinite; } .ds-ticker:hover .ds-ticker-row { animation-play-state: paused; } .ds-ticker i { width: 6px; height: 6px; border-radius: 999px; background: rgba(255,204,41,0.7); } @keyframes ds-marquee { to { transform: translateX(-50%); } } @media (prefers-reduced-motion: reduce) { .ds-ticker-row { animation: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Box Lit at Night",
+    "overview": "The site is the store's box after dark: a black display wall, a graphite slatwall with fine grooves, an LED strip burning over every shelf, and yellow acrylic plaques hung on metal hooks. Every surface is a physical fixture of that box rebuilt in CSS and SVG, not a generic marketplace grid. The storefront lightbox (yellow acrylic, black lettering with a white outline, the white brand band) opens the page because it is the identity customers already know from the street and Instagram.\n\nDensity is retail, not editorial: product cells sit two-up on phones and three to four-up on desktop, but each hangs on its own hook under its own LED segment, so the wall reads as merchandise on display. Headlines are shouted in expanded, uppercase Archivo Black; body copy stays in plain, muted, readable Archivo. Motion is physical: the sign stutters on like fluorescent tubes, LED strips scale on as rows enter view, and hanging products swing to rest on a spring.\n\nThe system rejects the white marketplace grid with a banner carousel. Yellow is the only accent; there is no second hue in the store.",
+    "keyCharacteristics": [
+      "Near-black wall with tonal graphite panels; no light-mode surface.",
+      "One accent, sign yellow, carried by acrylic plaques, selected states, and primary actions.",
+      "LED white is light, used for text and for the strip glow, never as a large fill.",
+      "Materials are real fixtures: slatwall, LED strip, rail, hook, blister hang-tab, punched-hole plaque and tag.",
+      "Expanded uppercase Archivo Black headlines over normal-width body text.",
+      "Physical motion: flicker, scale-on, spring swing; all disabled under reduced motion."
+    ],
+    "rules": [
+      { "name": "The One Sign Rule", "body": "Sign yellow is the only accent hue in the store. A new emphasis is expressed with yellow, LED white, or weight, never with a second color.", "section": "colors" },
+      { "name": "The LED Is Light Rule", "body": "LED white is text and illumination. It fills small objects (the light pill, the payment ticket, the shipping label) but never a section background.", "section": "colors" },
+      { "name": "The Hairline Rule", "body": "Borders on dark are white at 5-12% alpha (ring or border), never a solid gray stroke.", "section": "colors" },
+      { "name": "The Width Axis Rule", "body": "Hierarchy comes from the width axis plus weight: expanded (125) for headlines, semi (112) for actions, labels and prices, normal (100) for reading text. Condensed exists but is not used on shipped surfaces.", "section": "typography" },
+      { "name": "The Tabular Price Rule", "body": "Every price, product code, phone number and count uses tabular figures.", "section": "typography" },
+      { "name": "The Light Has a Source Rule", "body": "Glow belongs to the LED strip, the sign, the LED ticker and yellow actions. Panels and cards do not glow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep sign yellow as the only accent and put plaque black on every yellow surface.",
+      "Do hang products: hook, hang-tab, LED segment above, price plaque over the photo.",
+      "Do set section headlines in Archivo 900 at width 125, uppercase, stacked with explicit breaks, with leading 0.88-0.95.",
+      "Do use tabular figures for every price, code and phone number.",
+      "Do separate dark surfaces with white hairlines at 5-12% alpha and tonal graphite steps.",
+      "Do give every motion a reduced-motion end state that shows the final, lit frame.",
+      "Do use real store photography for products and the physical store."
+    ],
+    "donts": [
+      "Don't use a white page, a white product grid, or a banner carousel.",
+      "Don't introduce a second accent hue on store surfaces; danger and ok stay inside the admin.",
+      "Don't fill section backgrounds with LED white; it is light, not paint.",
+      "Don't add glow to panels or cards; only the LED strip, the sign, the ticker and yellow actions emit light.",
+      "Don't place small uppercase tracked labels above headlines; the label style names groups only.",
+      "Don't use Doto outside the LED ticker and LED-style status moments such as the 404."
+    ]
+  }
+}
